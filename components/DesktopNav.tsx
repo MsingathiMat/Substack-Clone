@@ -11,6 +11,7 @@ import { HiDotsHorizontal } from "react-icons/hi";
 
 import PureProfileImage from './PureProfileImage';
 import { ProfileImage } from './HOC/withImgUrl';
+import Link from 'next/link';
 function DesktopNav() {
 
 const [ProfilePic, SetProfilePic] = useState<string | null>(null)
@@ -48,7 +49,10 @@ FetchData()
 
  
 
- <div className='flex relative group '>
+<Link href='/'>
+
+
+<div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
 
 <MdHomeFilled className=' text-[#4A4B4B]  ' size={24} />
@@ -56,7 +60,9 @@ FetchData()
 </div>
 <label className='left-10 opacity-0 transition-all duration-500 group-hover:opacity-100  group-hover:left-20   text-sm rounded-lg CENTER bg-black absolute top-2  text-white w-auto pl-3 h-8 pr-3'>Home</label>
  </div>
+</Link>
 
+ <Link href="/inbox">
  <div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
 
@@ -64,7 +70,11 @@ FetchData()
 
 </div>
 <label className='left-10 opacity-0 transition-all duration-500 group-hover:opacity-100  group-hover:left-20   text-sm rounded-lg CENTER bg-black absolute top-2  text-white w-auto pl-3 h-8 pr-3'>Inbox</label>
- </div>
+ </div></Link>
+ 
+
+ <Link href="/chat">
+ 
  <div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
 
@@ -73,15 +83,14 @@ FetchData()
 </div>
 <label className='left-10 opacity-0 transition-all duration-500 group-hover:opacity-100  group-hover:left-20   text-sm rounded-lg CENTER bg-black absolute top-2  text-white w-auto pl-3 h-8 pr-3'>Chat</label>
  </div >
+ </Link>
 
 
 
 
 
-
-
-
- <div className='flex relative group '>
+<Link href="activity">
+<div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
 
 <FaRegBell className=' text-[#4A4B4B]  ' size={24} />
@@ -89,8 +98,13 @@ FetchData()
 </div>
 <label className='left-10 opacity-0 transition-all duration-500 group-hover:opacity-100  group-hover:left-20   text-sm rounded-lg CENTER bg-black absolute top-2  text-white w-auto pl-3 h-8 pr-3'>Activity</label>
  </div>
+</Link>
 
- <div className='flex relative group '>
+
+
+
+<Link href="search">
+<div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
 
 <IoMdSearch className=' text-[#4A4B4B]  ' size={24} />
@@ -98,6 +112,7 @@ FetchData()
 </div>
 <label className='left-10 opacity-0 transition-all duration-500 group-hover:opacity-100  group-hover:left-20   text-sm rounded-lg CENTER bg-black absolute top-2  text-white w-auto pl-3 h-8 pr-3'>Search</label>
  </div>
+</Link>
 
  <div className='flex relative group '>
 <div className='flex hover:cursor-pointer hover:bg-gray-200 h-11 w-11 CENTER rounded-lg'>
