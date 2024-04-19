@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react"
 
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,14 +10,19 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Bookmark, EllipsisVertical } from "lucide-react"
+import { useAppProvider } from "@/store/AppContext"
 
  function MyCarousel() {
+
+  const UserDataMethod= useAppProvider()
+const ImageUrl = UserDataMethod?.UserData.thumbnailUrl
+  
   return (
     <Carousel
       opts={{
         align: "start",
       }}
-      className="w-[90%]"
+      className="w-[90%] "
     >
       <CarouselContent className=""  >
         {Array.from({ length: 15 }).map((_, index) => (
@@ -25,13 +31,15 @@ import { Bookmark, EllipsisVertical } from "lucide-react"
             
           
             <div className="p-1 ">
-              <Card className=" relative overflow-hidden  w-[200px] h-[280px]" >
+              <Card className=" relative overflow-hidden  w-[200px] h-[280px] " >
               
             <div >
 
 <div className=" p-4 CENTER flex-col gap-6 bg-gradient-to-t from-black/60 via-transparent to-transparent absolute  w-[200px] h-[280px] z-20"> 
 
-<img src="https://pbs.twimg.com/profile_images/1329559519727214593/HCt07Dvk_400x400.jpg" className=" w-[120px] h-[120px] rounded-md " />
+{/* <img src="https://pbs.twimg.com/profile_images/1329559519727214593/HCt07Dvk_400x400.jpg" className=" w-[120px] h-[120px] rounded-md " /> */}
+
+<img src={ImageUrl} className=" w-[120px] h-[120px] rounded-md " />
 
 
 <p className=" text-white text-[13px] "> Video Notes, improved search, Spotify integration, and more</p>
